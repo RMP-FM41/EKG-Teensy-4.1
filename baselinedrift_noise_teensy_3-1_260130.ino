@@ -17,13 +17,17 @@ void loop() {
   float t = micros() / 1000000.0; 
 
   // --- Parameter für Baseline Drift ---
-  float frequenz = 0.2;       // 0,2 Hz 
-  float amplitude = 250.0;    // Amplitude der Sinuswelle (also insgesamt 2x 250)
-  float offset = 250.0;      // Mitte höher setzen 
+  float frequenz = 0.2;       	// 0,2 Hz 
+  float amplitude = 250.0;   	// peak-to-peak der Sinuswelle (also insgesamt 2x 250)
+								// den Wert "250.0" anpassen, um den baselinedrift zu verstärken/abzuschwächen
+								
+  float offset = 250.0;      	// Mitte höher setzen 
 
   // --- Parameter für Rauschen  ---
 
   int noiseLevel = 150; // "Amplitude" (1x 150)
+						// den Wert "150" ändern, um das Rauschsignal zu verstärken/abzuschwächen
+						
 
   // --- 1. Baseline berechnen ---
   float cleanSine = offset + amplitude * sin(2 * PI * frequenz * t);
