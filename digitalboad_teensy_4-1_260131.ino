@@ -208,13 +208,4 @@ float val = ekgHistory[dataIndex];	// hole Spannungswert aus der History
     }
     lastY = y;		// aktuelle Y-Position speichern 
   }
-  
-  // Info-Zeile unten
-  tft.setCursor(0, 225);	// unten links 
-  tft.fillRect(0, 225, 320, 15, ILI9341_BLACK);	// schwarzer Hintergrund 
-  tft.setTextColor(ILI9341_WHITE);	// weisse Schrift 
-  tft.print("Zeitfenster: ");
-  tft.print(TIME_WINDOW_SEC, 1);		// Zeitfenster mit 1 Dezimale
-  tft.print("s");
-
 }
