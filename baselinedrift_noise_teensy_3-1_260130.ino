@@ -19,15 +19,12 @@ void loop() {
   // --- Parameter für Baseline Drift ---
   float frequenz = 0.2;       	// 0,2 Hz 
   float amplitude = 250.0;   	// peak-to-peak der Sinuswelle (also insgesamt 2x 250)
-								// den Wert "250.0" anpassen, um den baselinedrift zu verstärken/abzuschwächen
-								
+								// den Wert "250.0" anpassen, um den baselinedrift zu verstärken/abzuschwächen							
   float offset = 250.0;      	// Mitte höher setzen 
 
   // --- Parameter für Rauschen  ---
-
   int noiseLevel = 150; // "Amplitude" (1x 150)
-						// den Wert "150" ändern, um das Rauschsignal zu verstärken/abzuschwächen
-						
+						// den Wert "150" ändern, um das Rauschsignal zu verstärken/abzuschwächen	
 
   // --- 1. Baseline berechnen ---
   float cleanSine = offset + amplitude * sin(2 * PI * frequenz * t);
@@ -40,7 +37,6 @@ void loop() {
 
   // --- Sicherheits-Clamping ---
   // verhindert, dass 12 Bit-Bereich verlassen wird -> Glitches
-
   combinedSignal = constrain(combinedSignal, 0, 4095);
 
   // --- DAC Ausgabe (Echtzeitsignal) ---
